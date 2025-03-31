@@ -9,11 +9,12 @@ from dotenv import load_dotenv
 import PyPDF2
 import pandas as pd
 import re
-import tabula
+# Removed tabula import as it's not compatible with Vercel
 import subprocess
 import openpyxl
 from openpyxl.utils import get_column_letter
 import gc
+import pdfplumber  # Using pdfplumber instead of tabula for PDF table extraction
 
 # Load environment variables
 load_dotenv()
@@ -374,28 +375,19 @@ def extract_pdf_text(file_path):
     return text
 
 def extract_pdf_tables(file_path):
-    """Extract tables from a PDF file using tabula-py"""
+    """Extract tables from a PDF file using pdfplumber"""
     try:
-        # Try to extract tables using tabula
-        tables = tabula.read_pdf(file_path, pages='all', multiple_tables=True)
-        return tables
+        # Try to extract tables using pdfplumber
+        with pdfplumber.open(file_path) as pdf:
+            tables = []
+            for page in pdf.pages:
+                for table in page.extract_tables():
+                    df = pd.DataFrame(table[1:], columns=table[0])
+                    tables.append(df)
+            return tables
     except Exception:
-        # If tabula fails, try PyPDF2 and some basic table detection
-        tables = []
-        text = extract_pdf_text(file_path)
-        
-        # Very basic table detection - look for patterns that might indicate tables
-        # This is a simplified approach and won't work for all tables
-        table_patterns = re.findall(r'((?:[^\n]+\|[^\n]+\n){2,})', text)
-        
-        for pattern in table_patterns:
-            lines = pattern.strip().split('\n')
-            data = [line.split('|') for line in lines]
-            if data and all(len(row) == len(data[0]) for row in data):
-                df = pd.DataFrame(data[1:], columns=data[0])
-                tables.append(df)
-        
-        return tables
+        # If pdfplumber fails, return empty list
+        return []
 
 def convert_pdf_to_markdown(file_path):
     """Convert PDF to Markdown format"""
