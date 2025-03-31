@@ -31,13 +31,13 @@
     },
     {
         "question": "Let's make sure you can write formulas in Google Sheets. Type this formula into Google Sheets. (It won't work in Excel)\n=SUM(ARRAY_CONSTRAIN(SEQUENCE(100, 100, 1, 4), 1, 10))\nWhat is the result?",
-        "code": "no",
-        "type": null
+        "code": "yes",
+        "type": "python"
     },
     {
         "question": "Let's make sure you can write formulas in Excel. Type this formula into Excel.\n\nNote: This will ONLY work in Office 365.\n\n=SUM(TAKE(SORTBY({14,4,6,13,13,0,5,7,13,13,13,3,11,6,14,13}, {10,9,13,2,11,8,16,14,7,15,5,4,6,1,3,12}), 1, 13))\nWhat is the result?",
-        "code": "no",
-        "type": null
+        "code": "yes",
+        "type": "python"
     },
     {
         "question": "Download and process the files in q-unicode-data.zip which contains three files with different encodings: \n data1.csv: CSV file encoded in CP-1252 \n data2.csv: CSV file encoded in UTF-8 \n data3.txt: Tab-separated file encoded in UTF-16 \n Each file has 2 columns: symbol and value. Sum up all the values where the symbol matches œ OR ˜ across all three files. \n What is the sum of all values associated with these symbols?",
