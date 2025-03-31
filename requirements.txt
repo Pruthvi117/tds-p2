@@ -3,14 +3,13 @@ uvicorn==0.28.0
 python-multipart==0.0.9
 python-dotenv==1.0.1
 requests==2.31.0
-# Essential data science libraries - these are large but necessary for core functionality
-numpy==2.2.4
-scikit-learn==1.4.2
-pandas==2.2.3
+# Data science libraries compatible with Python 3.10
+numpy==1.24.3
+pandas==2.0.3
+scikit-learn==1.3.0
 PyPDF2==3.0.1
-openpyxl==3.1.5
-python-docx==1.0.1
+openpyxl==3.1.2
+python-docx==0.8.11
 beautifulsoup4==4.12.2
-lxml==5.2.0
-pdfplumber==0.10.4
-
+lxml==4.9.3
+pdfplumber==0.10.2
