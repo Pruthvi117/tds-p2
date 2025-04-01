@@ -45,7 +45,7 @@
         "type": "python"
     },
     {
-        "question": " Let's make sure you know how to use GitHub. Create a GitHub account if you don't have one. Create a new public repository. Commit a single JSON file called email.json with the value {\"email\": \"krishna.kumar@gramener.com\"} and push it.\nEnter the raw Github URL of email.json so we can verify it. (It might look like https://raw.githubusercontent.com/[GITHUB ID]/[REPO NAME]/main/email.json.)",
+        "question": " Let's make sure you know how to use GitHub. Create a GitHub account if you don't have one. Create a new public repository. Commit a single JSON file called email.json with the value {\"email\": \"pruthvi.paladugla@gramener.com\"} and push it.\nEnter the raw Github URL of email.json so we can verify it. (It might look like https://raw.githubusercontent.com/[GITHUB ID]/[REPO NAME]/main/email.json.)",
         "code": "yes",
         "type": "python"
     },
@@ -105,12 +105,12 @@
         "type": "python"
     },
     {
-        "question": "Publish a page using GitHub Pages that showcases your work. Ensure that your email address krishna.kumar@gramener.com is in the page's HTML.\n\nGitHub pages are served via CloudFlare which obfuscates emails. So, wrap your email address inside a:\n\n<!--email_off-->krishna.kumar@gramener.com<!--/email_off-->\nWhat is the GitHub Pages URL? It might look like: https://[USER].github.io/[REPO]/",
+        "question": "Publish a page using GitHub Pages that showcases your work. Ensure that your email address pruthvi.paladugla@gramener.com is in the page's HTML.\n\nGitHub pages are served via CloudFlare which obfuscates emails. So, wrap your email address inside a:\n\n<!--email_off-->pruthvi.paladugla@gramener.com<!--/email_off-->\nWhat is the GitHub Pages URL? It might look like: https://[USER].github.io/[REPO]/",
         "code": "yes",
         "type": "python"
     },
     {
-        "question": "Let's make sure you can access Google Colab. Run this program on Google Colab, allowing all required access to your email ID: krishna.kumar@gramener.com.\n\nimport hashlib\nimport requests\nfrom google.colab import auth\nfrom oauth2client.client import GoogleCredentials\n\nauth.authenticate_user()\ncreds = GoogleCredentials.get_application_default()\ntoken = creds.get_access_token().access_token\nresponse = requests.get(\n  \"https://www.googleapis.com/oauth2/v1/userinfo\",\n  params={\"alt\": \"json\"},\n  headers={\"Authorization\": f\"Bearer {token}\"}\n)\nemail = response.json()[\"email\"]\nhashlib.sha256(f\"{email} {creds.token_expiry.year}\".encode()).hexdigest()[-5:]\nWhat is the result? (It should be a 5-character string)",
+        "question": "Let's make sure you can access Google Colab. Run this program on Google Colab, allowing all required access to your email ID: pruthvi.paladugla@gramener.com.\n\nimport hashlib\nimport requests\nfrom google.colab import auth\nfrom oauth2client.client import GoogleCredentials\n\nauth.authenticate_user()\ncreds = GoogleCredentials.get_application_default()\ntoken = creds.get_access_token().access_token\nresponse = requests.get(\n  \"https://www.googleapis.com/oauth2/v1/userinfo\",\n  params={\"alt\": \"json\"},\n  headers={\"Authorization\": f\"Bearer {token}\"}\n)\nemail = response.json()[\"email\"]\nhashlib.sha256(f\"{email} {creds.token_expiry.year}\".encode()).hexdigest()[-5:]\nWhat is the result? (It should be a 5-character string)",
         "code": "yes",
         "type": "python"
     },
@@ -125,7 +125,7 @@
         "type": "python"
     },
     {
-        "question": "Create a GitHub action on one of your GitHub repositories. Make sure one of the steps in the action has a name that contains your email address krishna.kumar@gramener.com. For example:\n\njobs:\n  test:\n    steps:\n      - name: krishna.kumar@gramener.com\n        run: echo \"Hello, world!\"\n      \nTrigger the action and make sure it is the most recent action.\n\nWhat is your repository URL? It will look like: https://github.com/USER/REPO",
+        "question": "Create a GitHub action on one of your GitHub repositories. Make sure one of the steps in the action has a name that contains your email address pruthvi.paladugla@gramener.com. For example:\n\njobs:\n  test:\n    steps:\n      - name: pruthvi.paladugla@gramener.com\n        run: echo \"Hello, world!\"\n      \nTrigger the action and make sure it is the most recent action.\n\nWhat is your repository URL? It will look like: https://github.com/USER/REPO",
         "code": "yes",
         "type": "python"
     },
@@ -165,7 +165,7 @@
         "type": null
     },
     {
-        "question": "SecurePay, a leading fintech startup, has implemented an innovative feature to detect and prevent fraudulent activities in real time. As part of its security suite, the system analyzes personalized transaction messages by converting them into embeddings. These embeddings are compared against known patterns of legitimate and fraudulent messages to flag unusual activity.\n\nImagine you are working on the SecurePay team as a junior developer tasked with integrating the text embeddings feature into the fraud detection module. When a user initiates a transaction, the system sends a personalized verification message to the user's registered email address. This message includes the user's email address and a unique transaction code (a randomly generated number). Here are 2 verification messages:\n\nDear user, please verify your transaction code 865 sent to krishna.kumar@gramener.com\nDear user, please verify your transaction code 34456 sent to krishna.kumar@gramener.com\nThe goal is to capture this message, convert it into a meaningful embedding using OpenAI's text-embedding-3-small model, and subsequently use the embedding in a machine learning model to detect anomalies.\n\nYour task is to write the JSON body for a POST request that will be sent to the OpenAI API endpoint to obtain the text embedding for the 2 given personalized transaction verification messages above. This will be sent to the endpoint https://api.openai.com/v1/embeddings.\n\nWrite your JSON body here:",
+        "question": "SecurePay, a leading fintech startup, has implemented an innovative feature to detect and prevent fraudulent activities in real time. As part of its security suite, the system analyzes personalized transaction messages by converting them into embeddings. These embeddings are compared against known patterns of legitimate and fraudulent messages to flag unusual activity.\n\nImagine you are working on the SecurePay team as a junior developer tasked with integrating the text embeddings feature into the fraud detection module. When a user initiates a transaction, the system sends a personalized verification message to the user's registered email address. This message includes the user's email address and a unique transaction code (a randomly generated number). Here are 2 verification messages:\n\nDear user, please verify your transaction code 865 sent to pruthvi.paladugla@gramener.com\nDear user, please verify your transaction code 34456 sent to pruthvi.paladugla@gramener.com\nThe goal is to capture this message, convert it into a meaningful embedding using OpenAI's text-embedding-3-small model, and subsequently use the embedding in a machine learning model to detect anomalies.\n\nYour task is to write the JSON body for a POST request that will be sent to the OpenAI API endpoint to obtain the text embedding for the 2 given personalized transaction verification messages above. This will be sent to the endpoint https://api.openai.com/v1/embeddings.\n\nWrite your JSON body here:",
         "code": "no",
         "type": null
     },
@@ -265,7 +265,7 @@
         "type": "python"
     },
     {
-        "question": "Create a scheduled GitHub action that runs daily and adds a commit to your repository. The workflow should:\n\nUse schedule with cron syntax to run once per day (must use specific hours/minutes, not wildcards)\nInclude a step with your email krishna.kumar@gramener.com in its name\nCreate a commit in each run\nBe located in .github/workflows/ directory\nAfter creating the workflow:\n\nTrigger the workflow and wait for it to complete\nEnsure it appears as the most recent action in your repository\nVerify that it creates a commit during or within 5 minutes of the workflow run",
+        "question": "Create a scheduled GitHub action that runs daily and adds a commit to your repository. The workflow should:\n\nUse schedule with cron syntax to run once per day (must use specific hours/minutes, not wildcards)\nInclude a step with your email pruthvi.paladugla@gramener.com in its name\nCreate a commit in each run\nBe located in .github/workflows/ directory\nAfter creating the workflow:\n\nTrigger the workflow and wait for it to complete\nEnsure it appears as the most recent action in your repository\nVerify that it creates a commit during or within 5 minutes of the workflow run",
         "code": "yes",
         "type": "python"
     },
